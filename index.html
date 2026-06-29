@@ -33,21 +33,14 @@ body{
     position:fixed;
     inset:0;
 
-    background:url("https://i.imgur.com/tOmR41o.jpeg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    transform:scale(1.08);
+    background:url("https://i.imgur.com/tOmR41o.jpeg") center/cover no-repeat;
 
     filter:blur(5px) brightness(0.9);
 
     z-index:-1;
     pointer-events:none;
 
-    /* 🔥 IMPORTANT FIX */
-    will-change: transform;
-    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.1);
 }
 
 .login-box{
@@ -163,18 +156,16 @@ body{
     -webkit-text-stroke: 2px rgba(0,0,0,0.85);
 
     /* More controlled glow (less messy than before) */
-text-shadow:
-    2px 0 0 rgba(0,0,0,0.8),
-   -2px 0 0 rgba(0,0,0,0.8),
-    0 2px 0 rgba(0,0,0,0.8),
-    0 -2px 0 rgba(0,0,0,0.8),
+    text-shadow:
+        0 0 6px rgba(168,85,247,0.25),
+        0 0 18px rgba(168,85,247,0.18),
+        0 0 28px rgba(236,72,153,0.12);
 
-    0 0 10px rgba(168,85,247,0.25),
-    0 0 22px rgba(168,85,247,0.18);
     animation: titlePulse 4.5s ease-in-out infinite;
 
     margin-bottom:22px;
 }
+
 
 /* smoother + more “breathing” motion */
 @keyframes titlePulse{
