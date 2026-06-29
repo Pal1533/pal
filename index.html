@@ -475,12 +475,6 @@ input,select{
   color:white;
 }
 
-button{
-    background:#9f7aea;
-    color:white;
-    transition:.2s;
-}
-
 button:hover{
     background:#000000;
     transform:translateY(-1px);
@@ -495,6 +489,50 @@ button:hover{
   text-align:center;
   margin-top:15px;
   opacity:0.6;
+}
+
+  td button{
+    margin:0 6px;
+}
+
+
+  .admin-box button,
+.edit-box button,
+.action-btn{
+    padding:10px 18px;
+
+    border:1px solid rgba(168,85,247,0.25);
+    border-radius:12px;
+
+    background: rgba(20, 22, 35, 0.75);
+    color:#d1d5db;
+
+    cursor:pointer;
+
+    font-weight:700;
+    letter-spacing:1px;
+
+    transition: all 0.2s ease;
+
+    backdrop-filter: blur(8px);
+}
+
+/* hover (same as tabs) */
+.admin-box button:hover,
+.edit-box button:hover,
+.action-btn:hover{
+    transform: translateY(-2px);
+    border-color: rgba(168,85,247,0.6);
+    color:#f5d0fe;
+
+    box-shadow: 0 0 12px rgba(168,85,247,0.25);
+}
+
+/* active click feel */
+.admin-box button:active,
+.edit-box button:active,
+.action-btn:active{
+    transform: translateY(0px);
 }
 
 </style>
@@ -667,7 +705,7 @@ button:hover{
 
 <br><br>
 
-<button class="tab button" onclick="addPlayer()">Add Player</button>
+<button onclick="addPlayer()">Add Player</button>
 
 <hr style="margin:15px 0; border-color:#222;">
 
@@ -1280,7 +1318,7 @@ if(mode == "wins"){
         </button>
 
         <button
-          class="tabs button"
+          class="action-btn"
           onclick="deletePlayer('${player.id}')"
         >
           Remove
