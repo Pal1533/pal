@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<img class="site-logo" src="https://i.imgur.com/XPoVRsE.png" alt="Rocket Goal Logo">
 <title>Rocket Goal Ranked Leaderboards</title>
 <link rel="icon" href="favicon.ico">
 <style>
@@ -13,29 +14,39 @@
 }
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  color:white;
-  padding:20px;
-  position:relative;
+    margin:0;
+    font-family:Arial,sans-serif;
+    color:#f4f5fa;
+    padding:20px;
+    position:relative;
+    background:url("https://i.imgur.com/tOmR41o.jpeg");
+}
+
+.site-logo{
+    display:block;
+    width:300px;
+    max-width:90%;
+    margin:0 auto -90px;
 }
 
 .bg{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
 
-  background:url("https://i.imgur.com/xQlQsi4.png");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+    background:url("https://i.imgur.com/tOmR41o.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
-  filter:blur(5.5px) brightness(0.9);
+    filter:blur(5.5px) brightness(0.9);
 
-  z-index:-1;
-  pointer-events:none;
+    transform:scale(1.1);
+
+    z-index:-1;
+    pointer-events:none;
 }
 
 .login-box{
@@ -49,13 +60,10 @@ body{
 }
 
 .login-box button{
-  padding:5px 8px;
-  font-size:11px;
-  border:none;
-  border-radius:6px;
-  background:#161926;
-  color:white;
-  cursor:pointer;
+
+    border-radius:50px;
+    padding:7px 14px;
+    cursor: pointer;
 }
 
 .flagIcon{
@@ -95,8 +103,8 @@ body{
   gap:10px;
 
   margin-bottom:20px;
-
-  background:#0a0a0a;
+  border:1px solid rgba(255,255,255,.06);
+  background:#23283b;
   border-radius:14px;
   padding:12px;
 }
@@ -106,7 +114,7 @@ body{
   align-items:center;
   gap:6px;
 
-  background:#111;
+  background:#313852;
   padding:6px 10px;
   border-radius:10px;
 }
@@ -130,6 +138,112 @@ body{
   transform:translateX(-50%);
 }
 
+.main-title{
+    text-align:center;
+    font-size:44px;
+    font-weight:950;
+    letter-spacing:2px;
+
+    /* Deep purple → pink neon gradient */
+    background: linear-gradient(
+        120deg,
+        #7c3aed,
+        #a855f7,
+        #ec4899,
+        #a855f7,
+        #7c3aed
+    );
+
+    background-size:250%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    /* Stronger, cleaner outline */
+    -webkit-text-stroke: 2px rgba(0,0,0,0.85);
+
+    /* More controlled glow (less messy than before) */
+    text-shadow:
+        0 0 6px rgba(168,85,247,0.25),
+        0 0 18px rgba(168,85,247,0.18),
+        0 0 28px rgba(236,72,153,0.12);
+
+    animation: titlePulse 4.5s ease-in-out infinite;
+
+    margin-bottom:22px;
+}
+
+/* smoother + more “breathing” motion */
+@keyframes titlePulse{
+    0%{
+        background-position:0% 50%;
+        transform:scale(1);
+    }
+    50%{
+        background-position:100% 50%;
+        transform:scale(1.02);
+    }
+    100%{
+        background-position:0% 50%;
+        transform:scale(1);
+    }
+}
+.footer-note{
+    margin-top:30px;
+    padding:18px;
+    text-align:center;
+
+    background:rgba(20, 22, 35, 0.75);
+    border:1px solid rgba(168,85,247,0.25);
+    border-radius:14px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.footer-title{
+    font-size:16px;
+    font-weight:800;
+    letter-spacing:1px;
+
+    color:#c084fc;
+    margin-bottom:6px;
+    text-transform:uppercase;
+}
+
+.footer-text{
+    font-size:13px;
+    color:#cbd5e1;
+    margin:4px 0;
+}
+
+.footer-link{
+    display:inline-block;
+    margin-top:10px;
+
+    color:#a855f7;
+    font-weight:700;
+    text-decoration:none;
+
+    padding:8px 12px;
+    border-radius:10px;
+
+    border:1px solid rgba(168,85,247,0.4);
+
+    transition:0.2s;
+}
+
+.footer-link:hover{
+    background:#a855f7;
+    color:white;
+    transform:translateY(-2px);
+}
+
+.accent{
+    color:#e879f9;
+    font-weight:700;
+}
+
 h1{
   text-align:center;
   color:#ffffff;
@@ -148,16 +262,55 @@ h1{
 }
 
 .tabs button{
-  padding:10px 16px;
-  border:none;
-  border-radius:10px;
-  background:#111;
-  color:white;
-  cursor:pointer;
+    padding:10px 18px;
+
+    border:1px solid rgba(168,85,247,0.25);
+    border-radius:12px;
+
+    background: rgba(20, 22, 35, 0.75);
+    color:#d1d5db;
+
+    cursor:pointer;
+
+    font-weight:700;
+    letter-spacing:1px;
+
+    transition: all 0.2s ease;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 0 0 transparent;
 }
 
+/* hover effect */
+.tabs button:hover{
+    transform: translateY(-2px);
+    border-color: rgba(168,85,247,0.6);
+    color:#f5d0fe;
+
+    box-shadow:
+        0 0 12px rgba(168,85,247,0.25);
+}
+
+/* active tab */
 .tabs button.active{
-  background:#0ea5e9;
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #a855f7,
+        #ec4899
+    );
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 0 15px rgba(168,85,247,0.4),
+        0 0 30px rgba(236,72,153,0.15);
+
+    transform: translateY(-1px);
 }
 
 .board{
@@ -169,15 +322,70 @@ h1{
 }
 
 .table-box{
-  background:#0a0a0a;
-  border-radius:18px;
-  padding:18px;
-  box-shadow:0 0 20px rgba(0,0,0,0.8);
+    background: rgba(30, 33, 52, 0.75);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 18px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        inset 0 0 0 1px rgba(255,255,255,0.03);
+
+    backdrop-filter: blur(10px);
+
+    transition: transform 0.2s ease;
 }
 
+
 h2{
-  text-align:center;
-  color:#38bdf8;
+    text-align:center;
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:2px;
+
+    color:#e9d5ff;
+
+    position:relative;
+
+    margin-bottom:16px;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 0 10px rgba(168,85,247,0.15);
+}
+
+/* purple underline glow */
+h2::after{
+    content:"";
+    display:block;
+    width:130px;
+    height:2px;
+
+    margin:8px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #a855f7,
+        #ec4899,
+        #a855f7,
+        transparent
+    );
+
+    border-radius:999px;
+
+    box-shadow:
+        0 0 10px rgba(168,85,247,0.5),
+        0 0 20px rgba(236,72,153,0.2);
+}
+
+/* subtle hover glow when hovering table box */
+.table-box:hover h2{
+    color:#f5d0fe;
+    text-shadow:
+        0 0 12px rgba(168,85,247,0.35);
 }
 
   .wins-table th,
@@ -193,14 +401,29 @@ h2{
 }
 
 .table th{
-  background:#111;
-  padding:12px;
+    background: linear-gradient(
+        90deg,
+        #2a2f4a,
+        #343a5c
+    );
+
+    padding: 12px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #e9d5ff;
+
+    border-bottom: 1px solid rgba(168,85,247,0.25);
 }
 
 .table td{
-  background:#0f0f0f;
-  padding:10px;
-  text-align:center;
+    padding: 10px;
+    text-align: center;
+
+    background: rgba(20, 22, 35, 0.6);
+
+    border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
 .table tr:nth-child(even) td{
@@ -236,7 +459,7 @@ h2{
 .edit-box{
   display:none;
   position:fixed;
-  right:280px;
+  right:300px;
   top:80px;
 
   width:260px;
@@ -258,16 +481,14 @@ input,select{
 }
 
 button{
-  padding:10px 14px;
-  border:none;
-  border-radius:8px;
-  background:#38bdf8;
-  color:white;
-  cursor:pointer;
+    background:#9f7aea;
+    color:white;
+    transition:.2s;
 }
 
 button:hover{
-  background:#0ea5e9;
+    background:#000000;
+    transform:translateY(-1px);
 }
 
 .action-btn{
@@ -296,7 +517,8 @@ button:hover{
 
 <div class="container">
 
-<h1>🚀 Rocket Goal.io Ranked Leaderboards</h1>
+<h1 class="main-title">Competitive Rankings</h1>
+
 <div class="icon-key" id="iconKey"></div>
 
 <div class="tabs">
@@ -516,14 +738,21 @@ button:hover{
 
 </div>
 
-<p class="note" style="opacity:1; color:white; text-shadow:0 0 3px black;">
-  Created by Vistvy, updated by Pal
-  <br><br>
-  If you want to be added to the leaderboard, or need your ranking updated, join the
-  <a href="https://discord.gg/nFe5xpGnEk" target="_blank" style="color:#38bdf8; text-decoration:underline;">
-    Rocket Goal Championship Discord
-  </a>!
-</p>
+<div class="footer-note">
+  <div class="footer-title">Leaderboard Hub</div>
+
+  <div class="footer-text">
+    Made by <span class="accent">Vistvy</span> & updated by <span class="accent">Pal</span>
+  </div>
+
+  <div class="footer-text">
+    Want your stats added or need a rank update?
+  </div>
+
+  <a class="footer-link" href="https://discord.gg/nFe5xpGnEk" target="_blank">
+    Join the Rocket Goal Championship Discord
+  </a>
+</div>
 
 </div>
 
